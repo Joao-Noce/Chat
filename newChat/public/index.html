@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucky Shot | Chat</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="CSS/index.css">
+    <script src="../socket.io/socket.io.js"></script>
+</head>
+
+<body>
+    <i name="icon" class="fa-regular fa-chess-knight"></i>
+    <i name="icon" class="fa-solid fa-chess-rook"></i>
+    <i name="icon" class="fa-solid fa-gamepad"></i>
+    <i name="icon" class="fa-solid fa-music"></i>
+    <i name="icon" class="fa-brands fa-old-republic"></i>
+    <i name="icon" class="fa-brands fa-galactic-republic"></i>
+    <i name="icon" class="fa-solid fa-jedi"></i>
+    <i name="icon" class="fa-solid fa-guitar"></i>
+    <i name="icon" class="fa-regular fa-hand-spock"></i>
+    <i name="icon" class="fa-solid fa-meteor"></i>
+    <i name="icon" class="fa-solid fa-robot"></i>
+    <i name="icon" class="fa-regular fa-hand-spock"></i>
+    <i name="icon" class="fa-solid fa-meteor"></i>
+    <i name="icon" class="fa-solid fa-robot"></i>
+    <button class="tres_barras" id="tres_barras"><a href="menu.html"><i class="fa-solid fa-bars"></i></a></button>
+    <div class="containerSalas" id="containerSalas">
+        <div class="pesquisa">
+            <input id="pesquisa" placeholder="Search by room's name" oninput="pesquisar(pesquisa.value)">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <div class="cabecalho">
+            <div>Sala</div>
+            <div>Criador</div>
+            <div>Usuários</div>
+        </div>
+        <div class="tabelaSalas" id="tabelaSalas"></div>
+    </div>
+
+    <form id="roomForm">
+        <i class="fa-regular fa-circle-xmark" onclick="sairContainerEntrar()"></i>
+        <input id="roomName" placeholder="Room Name" autocomplete="off">
+        <input id="roomPassword" type="password" placeholder="Room Password" autocomplete="off">
+        <input id="user" placeholder="User Name" autocomplete="off">
+        <div class="buttons">
+            <button id="createRoom">Create Room</button>
+            <button id="joinRoom">Join Room</button>
+        </div>
+    </form>
+
+    <div class="caixaMessages" id="caixaMessages">
+        <header id="header"></header>
+        <div id="messages">
+            <div style="margin-bottom: 8vh;"></div>
+        </div>
+    </div>
+
+    <form class="prompt" id="formPrompt">
+        <input id="input" autocomplete="off" placeholder="Type a message...">
+        <i class="fa-solid fa-circle-right" id="enviarMensagem" style="color: #FFF;" onclick="enviarMensagem()"></i>
+    </form>
+</body>
+
+</html>
+<script src="JS/server.js"></script>

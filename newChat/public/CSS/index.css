@@ -1,0 +1,364 @@
+* {
+    font-family: "Josefin Sans";
+}
+
+i[name="icon"] {
+    position: absolute;
+    font-size: 50px;
+    color: rgba(255, 255, 255, 0.2);
+    animation: float 10s infinite ease-in-out;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+body {
+    font-family: sans-serif;
+    color: #FFF;
+    background-color: rgba(34, 45, 67, 1);
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background-image: url(../Assets/cartas3.png);
+    background-attachment: fixed;
+    background-position-x: 90%;
+    background-position-y: 60%;
+    background-repeat: no-repeat;
+    background-size: 550px;
+    transition: 0.8s;
+}
+
+.containerSalas {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    background: rgba(45, 56, 78, 0.8);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: fit-content;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+    .tabelaSalas {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .linha,
+    .pesquisa,
+    .cabecalho {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 45px;
+        background: white;
+        border-radius: 15px;
+        color: black;
+
+        div {
+            width: 50%;
+            text-align: center;
+        }
+    }
+
+    .linha {
+        cursor: pointer;
+    }
+
+    .pesquisa,
+    .cabecalho {
+        background: transparent;
+        color: white;
+        border-radius: 0;
+        border-bottom: solid white 1px;
+        color: white;
+
+        i {
+            margin-right: 1rem;
+        }
+
+        input {
+            border: none;
+            outline: none;
+            background: transparent;
+            width: 50%;
+            padding: 2rem;
+            color: white;
+        }
+
+        input::placeholder {
+            color: #d1d1d1;
+        }
+
+        button {
+            background: transparent;
+            font-size: 20px;
+            height: 30px;
+            cursor: pointer;
+        }
+    }
+
+    .cabecalho {
+        height: 20px;
+        border: none;
+    }
+}
+
+
+input {
+    border: none;
+    padding: 0 1rem;
+    flex-grow: 1;
+    border-radius: 2rem;
+    margin: 0.25rem;
+    outline: none;
+}
+
+button {
+    background: #333;
+    border: none;
+    outline: none;
+    padding: 0 1rem;
+    margin: 0.25rem;
+    border-radius: 3px;
+    color: #fff;
+    transition: 1s;
+}
+
+
+
+#roomForm {
+    box-sizing: border-box;
+    backdrop-filter: blur(10px);
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 30%;
+    height: 45%;
+    background-color: rgba(45, 56, 78, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+
+    input {
+        width: 80%;
+        flex-grow: 0;
+        padding: 1;
+        height: 15%;
+        font-size: 15px;
+    }
+
+    i {
+        font-size: 30px;
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        cursor: pointer;
+    }
+
+    .buttons {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+
+        button {
+            background: #2C6B91;
+            padding: 1rem;
+            margin: 0;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        #joinRoom {
+            background: #EE675C
+        }
+
+    }
+
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.tres_barras {
+    position: fixed;
+    left: 0;
+    top: 30px;
+    background-color: transparent;
+    border: transparent;
+    cursor: pointer;
+    width: 5vw;
+
+    i {
+        font-size: 25px;
+        color: white;
+    }
+}
+
+header {
+    position: absolute;
+    text-align: center;
+    top: 24%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3vh;
+    border-bottom: solid #FFF 4px;
+    z-index: 10;
+}
+
+#messages {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(6, 5, 13, 0.5);
+    border-radius: 20px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    padding: 0 2vh 2vh 2vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #888 rgba(6, 5, 13, 0.5);
+
+    .linha {
+        display: flex;
+        margin-bottom: 2vh;
+    }
+
+    .linhaRight {
+        justify-content: flex-end;
+    }
+
+    .linhaCenter {
+        justify-content: center;
+    }
+
+    .linhaLeft {
+        justify-content: flex-start;
+    }
+
+    .mensagem {
+        max-width: 60%;
+        padding: 1.5vh;
+        border-radius: 1.5vh;
+        word-wrap: break-word;
+        color: white;
+        font-size: 2.2vh;
+    }
+
+    .rightMessage {
+        background-color: #49688D;
+        border-bottom-right-radius: 30px;
+        border-top-right-radius: 0;
+    }
+
+    .centerMessage {
+        background-color: #1D1D1D;
+        border-radius: 15px;
+        border: solid white 2px;
+    }
+
+    .leftMessage {
+        background-color: #1D1D1D;
+        border-bottom-left-radius: 30px;
+        border-top-left-radius: 0;
+    }
+}
+
+
+.prompt {
+    background: rgba(0, 0, 0, 0.15);
+    padding: 0.25rem;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    bottom: 0;
+    left: 50%;
+    display: flex;
+    height: 3rem;
+    width: 50%;
+    background-color: rgba(6, 5, 13, 0.5);
+    ;
+    border-radius: 10px;
+    padding: 0vw 1vw 0vw 1vw;
+
+    input {
+        padding: 1rem;
+        border: none;
+        font-size: 20px;
+        color: #FFF;
+        font-weight: 300;
+        background: transparent;
+        outline: none;
+    }
+
+    i {
+        position: absolute;
+        right: 2rem;
+        bottom: 0.5rem;
+        font-size: 30px;
+        cursor: pointer;
+    }
+}
+
+@media only screen and (max-device-width: 600px) and (min-device-height: 800px) {
+
+}
+
+@media only screen and (max-device-width: 640px) {
+
+    body {
+        background-position: center;
+        background-size: 350px;
+        overflow-y: hidden;
+    }
+    .containerSalas {
+        left: 50%;
+        width: 70%;
+    }
+
+    #roomForm {
+        width: 70%;
+        left: 50%;
+    }
+
+    .prompt {
+        width: 90%;
+    }
+}
